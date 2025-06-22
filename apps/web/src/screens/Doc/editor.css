@@ -1,0 +1,13 @@
+/* tiptap default styles + tailwind overrides */
+.ProseMirror {
+    min-height: 300px;
+    outline: none;
+  }
+  
+  .ProseMirror p.is-empty::before {
+    content: attr(data-placeholder);
+    color: #999;
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
