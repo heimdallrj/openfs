@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
-import HomeScreen from './screens/Home';
+import { Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/Home";
 
 export default function App() {
   return (
