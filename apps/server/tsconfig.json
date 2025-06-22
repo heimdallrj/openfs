@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+      "outDir": "dist",
+      "rootDir": "src",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "target": "es2019"
+    },
+    "include": ["src"]
+  }
