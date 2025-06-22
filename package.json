@@ -9,7 +9,9 @@
     "start:web:dev": "yarn workspace web dev",
     "start:server:dev": "yarn workspace server dev",
     "start:dev": "concurrently \"yarn start:web:dev\" \"yarn start:server:dev\"",
-    "build": "yarn workspaces run build"
+    "build": "yarn workspace web build && yarn workspace server build",
+    "prestart": "yarn build",
+    "start": "yarn workspace server start"
   },
   "devDependencies": {
     "concurrently": "^8.0.1"

@@ -6,7 +6,8 @@
       "moduleResolution": "node",
       "esModuleInterop": true,
       "resolveJsonModule": true,
-      "target": "es2019"
+      "target": "es2019",
+      "module": "commonjs"
     },
     "include": ["src"]
   }

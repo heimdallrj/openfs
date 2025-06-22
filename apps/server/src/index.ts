@@ -1,14 +1,20 @@
 import Fastify from 'fastify';
+import fastifyStatic from '@fastify/static';
 import jwt from '@fastify/jwt';
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 
-import type {} from '@openfs/types/fastify';
+import type { } from '@openfs/types/fastify';
 
 dotenv.config();
 
 const fastify = Fastify({ logger: true });
+
+fastify.register(fastifyStatic, {
+  root: path.join(__dirname, '../../web/dist'),
+  prefix: '/', // optional: only serve from `/`
+});
 
 fastify.register(jwt, { secret: process.env.JWT_SECRET || 'secret' });
 
@@ -30,7 +36,7 @@ fastify.get('/api/files', { preHandler: [fastify.authenticate] }, async (req, re
   res.send(files);
 });
 
-fastify.listen({ port: parseInt(process.env.SERVER_PORT || '3001') }, err => {
+fastify.listen({ port: parseInt(process.env.SERVER_PORT || '3000') }, err => {
   if (err) throw err;
-  console.log('API listening on port', process.env.SERVER_PORT || 3001);
+  console.log('API listening on port', process.env.SERVER_PORT || 3000);
 });
