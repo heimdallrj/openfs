@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "openfs",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start:dev:web": "yarn workspace web dev",
+    "start:dev:server": "yarn workspace server dev",
+    "dev": "concurrently \"yarn start:dev:web\" \"yarn start:dev:server\"",
+    "build": "yarn workspaces run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
