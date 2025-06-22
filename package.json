@@ -6,9 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "start:dev:web": "yarn workspace web dev",
-    "start:dev:server": "yarn workspace server dev",
-    "dev": "concurrently \"yarn start:dev:web\" \"yarn start:dev:server\"",
+    "start:web:dev": "yarn workspace web dev",
+    "start:server:dev": "yarn workspace server dev",
+    "start:dev": "concurrently \"yarn start:web:dev\" \"yarn start:server:dev\"",
     "build": "yarn workspaces run build"
   },
   "devDependencies": {
