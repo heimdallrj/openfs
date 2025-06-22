@@ -1,11 +1,17 @@
 {
-  "name": "types",
+  "name": "@openfs/types",
   "version": "0.0.0",
   "private": true,
   "types": "index.ts",
   "exports": {
     ".": {
       "types": "./index.ts"
+    },
+    "./fastify": {
+      "types": "./fastify.d.ts"
     }
+  },
+  "devDependencies": {
+    "fastify": "^5.4.0"
   }
 }

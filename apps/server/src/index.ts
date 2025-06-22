@@ -4,15 +4,17 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 
+import type {} from '@openfs/types/fastify';
+
 dotenv.config();
 
 // @TODO Move this to a separate file if needed
 // src/types/fastify.d.ts
-declare module 'fastify' {
-  interface FastifyInstance {
-    authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
-  }
-}
+// declare module 'fastify' {
+//   interface FastifyInstance {
+//     authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
+//   }
+// }
 
 const fastify = Fastify({ logger: true });
 
